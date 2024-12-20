@@ -69,14 +69,14 @@ app.get("/api/fruit/:fruitName", async (req, res) => {
       res.json({
         // filteredFruit,
 
-        family: filteredFruit.family,
-        order: filteredFruit.order,
-        genus: filteredFruit.genus,
-        calories: filteredFruit.nutritions.calories,
-        fats: filteredFruit.nutritions.fat,
-        sugars: filteredFruit.nutritions.sugar,
-        carbs: filteredFruit.nutritions.carbohydrates,
-        protein: filteredFruit.nutritions.protein,
+        family: filteredFruit.family || "Not available",
+        order: filteredFruit.order || "Not available",
+        genus: filteredFruit.genus || "Not available",
+        calories: filteredFruit.nutritions.calories || "Not available",
+        fats: filteredFruit.nutritions.fat || "Not available",
+        sugars: filteredFruit.nutritions.sugar || "Not available",
+        carbs: filteredFruit.nutritions.carbohydrates || "Not available",
+        protein: filteredFruit.nutritions.protein || "Not available",
       });
     } else {
       res.status(404).json({ error: "Fruit not found" });
