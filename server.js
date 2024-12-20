@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config({ path: "backend/.env" });
+dotenv.config({ path: ".env" });
 
 
 
@@ -27,7 +27,7 @@ app.use(cors());
 
 // Serve static files from the src directory
 // app.use(express.static("src"));
-app.use(express.static(path.join(__dirname, "src")));
+app.use(express.static(path.join(__dirname, "../Fruit-frontend/src")));
 
 //api key
 const apiKey = process.env.API_KEY;
